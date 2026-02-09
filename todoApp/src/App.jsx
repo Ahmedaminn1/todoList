@@ -98,7 +98,9 @@ function App() {
             ) : (
               <div className="todo-content">
                 <div className="todo-info">
-                  <span className="todo-text">{todo.text}</span>
+                  <span className={`todo-text status-text-${todo.status.toLowerCase().replace(' ', '-')}`}>
+                    {todo.text}
+                  </span>
                   <button
                     onClick={() => cycleStatus(todo.id)}
                     className={`status-badge status-${todo.status.toLowerCase().replace(' ', '-')}`}
